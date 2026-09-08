@@ -1,26 +1,343 @@
 @import "tailwindcss";
 
+/* ============================================================
+   VORYN CAPITAL — Design System
+   Navy · Slate/Silver · Gold accent
+   ============================================================ */
+
+@theme {
+  /* Brand navy */
+  --color-navy-50: #eef1f8;
+  --color-navy-100: #d6ddef;
+  --color-navy-200: #adbbdf;
+  --color-navy-300: #7f92c9;
+  --color-navy-400: #4f66a8;
+  --color-navy-500: #2e4a8f;
+  --color-navy-600: #24356f;
+  --color-navy-700: #1b2a5b; /* primary */
+  --color-navy-800: #16224a;
+  --color-navy-900: #101a3d;
+  --color-navy-950: #0a1230;
+
+  /* Gold accent */
+  --color-gold-300: #e6cd77;
+  --color-gold-400: #d8b84a;
+  --color-gold-500: #c9a227;
+  --color-gold-600: #a9861c;
+
+  /* Silver / slate */
+  --color-silver-100: #f4f5f7;
+  --color-silver-200: #e6e8ec;
+  --color-silver-300: #cdd1d9;
+  --color-silver-400: #9aa1ad;
+  --color-silver-500: #6b7280;
+  --color-silver-600: #4a5160;
+
+  --color-ink: #0f1526;
+  --color-cream: #f8f9fb;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), sans-serif;
+
+  --radius-xl2: 1.25rem;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f1526;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Utility helpers */
+.container-x {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .container-x {
+    padding-inline: 2rem;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* ── Gradient text ── */
+.gradient-gold {
+  background: linear-gradient(105deg, #e6cd77 0%, #c9a227 40%, #d8b84a 70%, #f0d070 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ── Section eyebrow ── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-600);
+}
+
+/* ── Subtle grid pattern for dark hero ── */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+/* ── Diagonal mesh for hero depth ── */
+.bg-mesh {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 40%, rgba(78, 102, 168, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 80% 70%, rgba(201, 162, 39, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 70% at 60% 10%, rgba(46, 74, 143, 0.25) 0%, transparent 60%);
+}
+
+/* ── Noise texture overlay ── */
+.bg-noise {
+  position: relative;
+}
+.bg-noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Glassmorphism ── */
+.glass {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-dark {
+  background: rgba(10, 18, 48, 0.6);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── Reveal animation base ── */
+@keyframes voryn-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Marquee ── */
+@keyframes voryn-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: voryn-marquee 28s linear infinite;
+}
+
+/* ── Shimmer sweep ── */
+@keyframes voryn-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.shimmer-gold {
+  background: linear-gradient(
+    105deg,
+    #c9a227 0%,
+    #e6cd77 30%,
+    #f0d880 50%,
+    #d8b84a 70%,
+    #c9a227 100%
+  );
+  background-size: 200% auto;
+  animation: voryn-shimmer 3s linear infinite;
+}
+
+/* ── Pulse ring ── */
+@keyframes voryn-pulse-ring {
+  0% { transform: scale(1); opacity: 0.4; }
+  70% { transform: scale(1.08); opacity: 0; }
+  100% { transform: scale(1); opacity: 0; }
+}
+.pulse-ring::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  border: 2px solid rgba(201, 162, 39, 0.5);
+  animation: voryn-pulse-ring 2.5s ease-out infinite;
+  pointer-events: none;
+}
+
+/* ── Orb float ── */
+@keyframes voryn-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-18px) scale(1.04); }
+}
+.orb-float {
+  animation: voryn-float 8s ease-in-out infinite;
+}
+.orb-float-slow {
+  animation: voryn-float 12s ease-in-out infinite reverse;
+}
+
+/* ── Animated widget glow border ── */
+@keyframes voryn-glow-border {
+  0%, 100% { box-shadow: 0 0 18px 2px rgba(201, 162, 39, 0.18), 0 8px 40px rgba(10,18,48,0.45); }
+  50% { box-shadow: 0 0 32px 6px rgba(201, 162, 39, 0.32), 0 12px 50px rgba(10,18,48,0.5); }
+}
+.glow-widget {
+  animation: voryn-glow-border 3.5s ease-in-out infinite;
+}
+
+/* ── Card hover lift ── */
+.card-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+}
+
+/* ── Card gold glow on hover ── */
+.card-glow {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.card-glow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px -12px rgba(201, 162, 39, 0.2), 0 4px 20px rgba(16, 26, 61, 0.12);
+  border-color: rgba(201, 162, 39, 0.35) !important;
+}
+
+/* ── Gold glow button ── */
+.btn-gold {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-gold::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+.btn-gold:hover::after {
+  transform: translateX(100%);
+}
+.btn-gold:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 32px rgba(201, 162, 39, 0.45);
+}
+
+/* ── Step connector ── */
+.step-connector {
+  position: relative;
+}
+.step-connector:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 2.75rem;
+  right: -1.5rem;
+  width: 3rem;
+  height: 2px;
+  border-top: 2px dashed rgba(201, 162, 39, 0.3);
+  display: none;
+}
+@media (min-width: 768px) {
+  .step-connector:not(:last-child)::after {
+    display: block;
+  }
+}
+
+/* ── Gold glow text ── */
+.glow-gold {
+  text-shadow: 0 0 20px rgba(201, 162, 39, 0.5), 0 0 40px rgba(201, 162, 39, 0.2);
+}
+
+/* ── Star rating ── */
+.star-gold {
+  color: #c9a227;
+  filter: drop-shadow(0 1px 3px rgba(201, 162, 39, 0.4));
+}
+
+/* ── Wave top ── */
+.wave-top {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.wave-top svg {
+  display: block;
+  width: 100%;
+}
+
+/* ── Gold top border on hover cards ── */
+.card-gold-top {
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 2px solid transparent;
+}
+.card-gold-top:hover {
+  border-top-color: var(--color-gold-500);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -12px rgba(16,26,61,0.18);
+}
+
+/* ── Scrollbar styling ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-navy-950);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold-600);
+  border-radius: 3px;
+}
+
+::selection {
+  background: var(--color-gold-500);
+  color: #101a3d;
 }
