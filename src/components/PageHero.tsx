@@ -27,7 +27,7 @@ export default function PageHero({
         className="object-cover object-center"
       />
 
-      {/* Multi-layer overlay — dark on left, fading right, navy brand tint */}
+      {/* Multi-layer overlay - dark on left, fading right, navy brand tint */}
       <div className="absolute inset-0 bg-gradient-to-r from-navy-950/92 via-navy-950/80 to-navy-900/65" />
       <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-navy-950/30" />
 

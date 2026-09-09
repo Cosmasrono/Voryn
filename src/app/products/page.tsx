@@ -12,7 +12,7 @@ import LoanCalculator from "@/components/LoanCalculator";
 export const metadata: Metadata = {
   title: "Loan Products",
   description:
-    "Explore Voryn Capital's five loan products — from Voryn Daily Trader quick cash to Voryn Growth SME financing up to KES 1,000,000.",
+    "Explore Voryn Capital's five loan products - from Voryn Daily Trader quick cash to Voryn Growth SME financing up to KES 1,000,000.",
 };
 
 export default function ProductsPage() {

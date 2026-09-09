@@ -154,7 +154,7 @@ export default function ChatBot() {
               : "bg-gold-500 hover:bg-gold-400 hover:scale-110"
           }`}
         >
-          {/* Pulse ring — only when closed */}
+          {/* Pulse ring - only when closed */}
           {!open && (
             <>
               <span className="absolute inset-0 rounded-full bg-gold-500 opacity-30 animate-ping" />
@@ -279,7 +279,7 @@ export default function ChatBot() {
             <div ref={bottomRef} />
           </div>
 
-          {/* Suggested prompts — only on first message */}
+          {/* Suggested prompts - only on first message */}
           {messages.length === 1 && (
             <div className="flex flex-wrap gap-1.5 px-4 pb-3">
               {SUGGESTED.map((s) => (

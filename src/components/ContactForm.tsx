@@ -59,7 +59,7 @@ export default function ContactForm() {
       if (res.ok && json.delivered) {
         setStatus("sent");
       } else if (res.ok) {
-        // Lead accepted but email not configured — steer to WhatsApp.
+        // Lead accepted but email not configured - steer to WhatsApp.
         setStatus("fallback");
       } else {
         setStatus("error");
@@ -91,8 +91,8 @@ export default function ContactForm() {
         <h3 className="mt-5 font-display text-2xl font-bold text-navy-800">Request received!</h3>
         <p className="mt-2 max-w-sm text-silver-600">
           {status === "sent"
-            ? "Thank you — your details have been sent to our team. A Voryn relationship officer will call you back shortly."
-            : "Thank you! To reach us fastest, tap below to send your details straight to our team on WhatsApp — or we'll call you back."}
+            ? "Thank you - your details have been sent to our team. A Voryn relationship officer will call you back shortly."
+            : "Thank you! To reach us fastest, tap below to send your details straight to our team on WhatsApp - or we'll call you back."}
         </p>
         <button
           onClick={sendWhatsApp}
@@ -164,10 +164,10 @@ export default function ContactForm() {
             <option value="" disabled>Select a loan product</option>
             {products.map((p) => (
               <option key={p.slug} value={p.name}>
-                {p.name} — {p.short}
+                {p.name} - {p.short}
               </option>
             ))}
-            <option value="Not sure">Not sure — help me choose</option>
+            <option value="Not sure">Not sure - help me choose</option>
           </select>
         </div>
         <div className="sm:col-span-2">

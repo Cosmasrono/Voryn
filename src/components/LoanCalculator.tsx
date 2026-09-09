@@ -218,7 +218,7 @@ export default function LoanCalculator({
             <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-silver-400">
               <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />
               Figures are indicative estimates for illustration only, based on a sample monthly
-              service fee — not an offer of credit or a quotation. Final terms are confirmed on
+              service fee - not an offer of credit or a quotation. Final terms are confirmed on
               application, subject to assessment.
             </p>
           </div>

@@ -31,7 +31,7 @@ export default function Navbar() {
           : "bg-white border-b border-transparent"
       }`}
     >
-      {/* Gold top accent strip — visible when scrolled */}
+      {/* Gold top accent strip - visible when scrolled */}
       <div
         className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-gold-500/0 via-gold-500 to-gold-500/0 transition-opacity duration-500 ${
           scrolled ? "opacity-100" : "opacity-0"

@@ -4,7 +4,7 @@ export const site = {
   tagline: "Capital for Growth. Credit for Enterprise. Assets for Tomorrow.",
   taglineShort: "Fuel the hustle. Grow the enterprise.",
   description:
-    "Voryn Capital delivers fast, responsible working-capital and SME growth finance for Kenya's traders, market vendors, farmers and small businesses — paired with hands-on advisory and asset-management support.",
+    "Voryn Capital delivers fast, responsible working-capital and SME growth finance for Kenya's traders, market vendors, farmers and small businesses - paired with hands-on advisory and asset-management support.",
   group: "Voryn Group Holdings Limited",
   phone: "+254 722 473 078",
   phoneHref: "+254722473078",

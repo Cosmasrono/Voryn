@@ -24,7 +24,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact & Apply"
         title="Let's find the right loan for your business"
-        subtitle="Reach out today. Our relationship officers are ready to guide you from application to disbursement — quickly and transparently."
+        subtitle="Reach out today. Our relationship officers are ready to guide you from application to disbursement - quickly and transparently."
         crumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
 
@@ -34,7 +34,7 @@ export default function ContactPage() {
             <div>
               <h2 className="font-display text-2xl font-bold text-navy-800">Get in touch</h2>
               <p className="mt-2 text-silver-600">
-                Prefer to talk? Call or message us directly — we&apos;re happy to help you choose.
+                Prefer to talk? Call or message us directly - we&apos;re happy to help you choose.
               </p>
 
               <div className="mt-8 space-y-4">

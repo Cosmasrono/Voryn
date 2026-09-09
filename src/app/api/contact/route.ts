@@ -37,16 +37,16 @@ export async function POST(req: Request) {
   const rows: [string, string][] = [
     ["Name", `${firstName} ${data.lastName || ""}`.trim()],
     ["Phone", phone],
-    ["Email", data.email || "—"],
-    ["Business", data.business || "—"],
-    ["Location", data.location || "—"],
-    ["Preferred product", data.product || "—"],
-    ["Notes", data.message || "—"],
+    ["Email", data.email || "-"],
+    ["Business", data.business || "-"],
+    ["Location", data.location || "-"],
+    ["Preferred product", data.product || "-"],
+    ["Notes", data.message || "-"],
   ];
 
   const html = `
     <div style="font-family:system-ui,Arial,sans-serif;max-width:560px">
-      <h2 style="color:#1b2a5b;margin:0 0 4px">New loan enquiry — Voryn Capital website</h2>
+      <h2 style="color:#1b2a5b;margin:0 0 4px">New loan enquiry - Voryn Capital website</h2>
       <p style="color:#6b7280;margin:0 0 16px">Submitted via voryncapital.co.ke</p>
       <table style="width:100%;border-collapse:collapse">
         ${rows
@@ -80,7 +80,7 @@ export async function POST(req: Request) {
       body: JSON.stringify({
         from,
         to: [to],
-        subject: `New loan enquiry — ${firstName} ${data.lastName || ""}`.trim(),
+        subject: `New loan enquiry - ${firstName} ${data.lastName || ""}`.trim(),
         html,
         ...(data.email ? { reply_to: data.email } : {}),
       }),

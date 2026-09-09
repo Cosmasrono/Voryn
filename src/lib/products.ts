@@ -37,7 +37,7 @@ export const products: Product[] = [
     featured: true,
     headline: "The everyday engine for your business.",
     summary:
-      "Our flagship unsecured working-capital loan for traders and growing SMEs. Restock inventory, pay suppliers, and close short-term cash-flow gaps — with a credit limit that grows every time you repay.",
+      "Our flagship unsecured working-capital loan for traders and growing SMEs. Restock inventory, pay suppliers, and close short-term cash-flow gaps - with a credit limit that grows every time you repay.",
     min: 10000,
     max: 250000,
     tenure: "1 – 6 months",
@@ -57,7 +57,7 @@ export const products: Product[] = [
       "Short-term cash-flow gaps",
     ],
     features: [
-      "Unsecured — no collateral required",
+      "Unsecured - no collateral required",
       "Graduated credit: KES 20K → 50K → 100K → 200K+",
       "Progressive limits based on repayment history",
       "Basic business-skills training with your first loan",
@@ -90,7 +90,7 @@ export const products: Product[] = [
     ],
     uses: ["Daily stock purchase", "Quick top-ups", "Weekly restock", "Emergency trade cash"],
     features: [
-      "Ultra-fast approval — often same day",
+      "Ultra-fast approval - often same day",
       "Flexible daily or weekly repayment",
       "Perfect for weekly trading cycles",
       "Builds history toward Voryn Biashara",
@@ -108,7 +108,7 @@ export const products: Product[] = [
     featured: true,
     headline: "Backing the women who move the market.",
     summary:
-      "A product designed around female micro-entrepreneurs — with priority processing, gender-sensitive coaching, and flexible entry criteria for first-time rural women borrowers.",
+      "A product designed around female micro-entrepreneurs - with priority processing, gender-sensitive coaching, and flexible entry criteria for first-time rural women borrowers.",
     min: 5000,
     max: 100000,
     tenure: "21 – 45 days",
@@ -141,7 +141,7 @@ export const products: Product[] = [
     featured: true,
     headline: "For businesses ready for the next level.",
     summary:
-      "Our premium unsecured SME product for enterprises with proven turnover and repayment capacity. Fund expansion, new branches, equipment and staff — with financing that scales up to KES 1 million.",
+      "Our premium unsecured SME product for enterprises with proven turnover and repayment capacity. Fund expansion, new branches, equipment and staff - with financing that scales up to KES 1 million.",
     min: 100000,
     max: 1000000,
     tenure: "3 – 18 months",

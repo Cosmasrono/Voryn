@@ -147,7 +147,7 @@ export function generateLocalBotReply(messages: { role: string; content: string 
       `• **Tenure:** ${p.tenure}\n` +
       `• **Disbursement:** Cycle-aligned disbursement\n` +
       `• **Best for:** Smallholder farmers, livestock keepers, agri-input dealers, and crop transporters.\n` +
-      `• **Advantage:** Repayment is structured around when your harvest or livestock sells — you don't pay when your money is tied up in the field!\n\n` +
+      `• **Advantage:** Repayment is structured around when your harvest or livestock sells - you don't pay when your money is tied up in the field!\n\n` +
       `Apply today via **${site.phone}**.`;
   }
 

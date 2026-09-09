@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -23,7 +23,7 @@ export async function generateMetadata({
   const product = productBySlug(slug);
   if (!product) return { title: "Product not found" };
   return {
-    title: `${product.name} — ${product.short}`,
+    title: `${product.name} - ${product.short}`,
     description: product.summary,
   };
 }

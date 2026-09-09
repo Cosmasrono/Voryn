@@ -16,7 +16,7 @@ export type LoanEstimate = {
 
 /**
  * Indicative repayment estimate using a simple monthly service-fee model.
- * Figures are illustrative only — not an offer of credit or a quotation.
+ * Figures are illustrative only - not an offer of credit or a quotation.
  */
 export function estimateLoan(
   product: Product,

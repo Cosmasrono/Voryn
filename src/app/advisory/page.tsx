@@ -18,7 +18,7 @@ import SectionHeading from "@/components/SectionHeading";
 export const metadata: Metadata = {
   title: "Business Advisory",
   description:
-    "Every Voryn loan is paired with practical business advisory — cash-flow training, pricing and profit guidance, inventory management and one-on-one coaching.",
+    "Every Voryn loan is paired with practical business advisory - cash-flow training, pricing and profit guidance, inventory management and one-on-one coaching.",
 };
 
 const services = [
@@ -60,13 +60,13 @@ export default function AdvisoryPage() {
               Knowledge that grows with your business
             </h2>
             <p className="mt-4 text-lg text-silver-600">
-              Our officers sit down with you where you work — in the market, the shop, the
+              Our officers sit down with you where you work - in the market, the shop, the
               cooperative. They teach practical skills you can use the same day, and stay with you
               cycle after cycle as your business grows.
             </p>
             <p className="mt-4 text-silver-600">
               It&apos;s the difference between a loan that&apos;s spent and a loan that&apos;s
-              invested — and it&apos;s included with every Voryn product, at no extra cost.
+              invested - and it&apos;s included with every Voryn product, at no extra cost.
             </p>
           </Reveal>
         </div>
@@ -78,7 +78,7 @@ export default function AdvisoryPage() {
             center
             eyebrow="What we help with"
             title="Practical support, not theory"
-            subtitle="Delivered in plain language by officers on the ground — designed for real, informal and rural businesses."
+            subtitle="Delivered in plain language by officers on the ground - designed for real, informal and rural businesses."
           />
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => (

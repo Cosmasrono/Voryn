@@ -32,7 +32,7 @@ const steps = [
   {
     icon: BadgeCheck,
     title: "Get approved fast",
-    body: "We assess your real cash flow and trading history — not just collateral. Same-day approval for repeat clients.",
+    body: "We assess your real cash flow and trading history - not just collateral. Same-day approval for repeat clients.",
   },
   {
     icon: HandCoins,
@@ -55,7 +55,7 @@ const why = [
   {
     icon: TrendingUp,
     title: "Graduated credit",
-    body: "Every loan repaid on time unlocks a higher limit — from KES 20,000 all the way to KES 1,000,000.",
+    body: "Every loan repaid on time unlocks a higher limit - from KES 20,000 all the way to KES 1,000,000.",
   },
   {
     icon: GraduationCap,
@@ -118,7 +118,7 @@ export default function Home() {
         {/* ── Full-screen background image ── */}
         <Image
           src="/images/hero-bg.jpg"
-          alt="Vibrant Kenyan market — the people Voryn Capital serves"
+          alt="Vibrant Kenyan market - the people Voryn Capital serves"
           fill
           priority
           sizes="100vw"
@@ -131,15 +131,15 @@ export default function Home() {
         {/* Subtle grid texture on top */}
         <div className="absolute inset-0 bg-grid opacity-30" />
 
-        {/* Gold accent glow — bottom left */}
+        {/* Gold accent glow - bottom left */}
         <div className="absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-gold-500/10 blur-3xl pointer-events-none" />
-        {/* Soft blue orb — top right */}
+        {/* Soft blue orb - top right */}
         <div className="orb-float-slow absolute -right-20 top-10 h-96 w-96 rounded-full bg-navy-400/20 blur-3xl pointer-events-none" />
 
         {/* Content grid */}
         <div className="container-x relative flex flex-1 items-center">
           <div className="grid w-full items-center gap-12 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:py-28">
-            {/* Left — headline + CTAs */}
+            {/* Left - headline + CTAs */}
             <div>
               <Reveal delay={0.03}>
                 <span className="eyebrow !text-gold-400">
@@ -160,7 +160,7 @@ export default function Home() {
               <Reveal delay={0.14}>
                 <p className="mt-6 max-w-xl text-lg leading-relaxed text-silver-300">
                   Fast, unsecured working-capital and SME growth loans for traders, market vendors,
-                  farmers and small businesses — disbursed to {site.mpesa} and paired with real
+                  farmers and small businesses - disbursed to {site.mpesa} and paired with real
                   business advisory.
                 </p>
               </Reveal>
@@ -199,7 +199,7 @@ export default function Home() {
               </Reveal>
             </div>
 
-            {/* Right — graduated credit widget */}
+            {/* Right - graduated credit widget */}
             <Reveal delay={0.18} className="relative">
               <div className="glow-widget relative mx-auto max-w-md rounded-3xl border border-white/15 bg-navy-950/70 p-6 shadow-2xl backdrop-blur-xl">
                 <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gold-500/15 blur-2xl pointer-events-none" />
@@ -247,7 +247,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Trusted badges marquee — bottom strip */}
+        {/* Trusted badges marquee - bottom strip */}
         <div className="relative border-t border-white/10 bg-navy-950/60 py-4 backdrop-blur-sm overflow-hidden">
           <div className="flex animate-marquee whitespace-nowrap">
             {trustedBadges.map((badge, i) => (
@@ -290,7 +290,7 @@ export default function Home() {
             center
             eyebrow="Loan Products"
             title="Five loans, built for the way you trade"
-            subtitle="From daily hustle capital to KES 1 million growth financing — each product is matched to the real cash-flow rhythm of your business."
+            subtitle="From daily hustle capital to KES 1 million growth financing - each product is matched to the real cash-flow rhythm of your business."
           />
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((p, i) => (
@@ -369,7 +369,7 @@ export default function Home() {
           <SectionHeading
             center
             eyebrow="Why Voryn"
-            title="More than a lender — a growth partner"
+            title="More than a lender - a growth partner"
             subtitle="We combine responsible credit, hands-on advisory and asset-management support to help your business build lasting value."
           />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -397,12 +397,12 @@ export default function Home() {
               <span className="h-px w-6 bg-current" /> Rooted in Kenya
             </span>
             <h2 className="mt-3 font-display text-3xl font-bold sm:text-4xl">
-              Built for the real economy — the market, the duka, the shamba
+              Built for the real economy - the market, the duka, the shamba
             </h2>
             <p className="mt-4 text-silver-300">
               We meet business owners where they are: in the market stalls, roadside kiosks,
               hardware shops and farms that keep Kenya moving. Our relationship officers live and
-              work in these communities — so we understand your cash flow, your seasons and your
+              work in these communities - so we understand your cash flow, your seasons and your
               ambitions.
             </p>
             <div className="mt-8 grid grid-cols-2 gap-4">
@@ -465,8 +465,8 @@ export default function Home() {
                 Business advisory, included
               </h3>
               <p className="mt-3 text-silver-600">
-                Every loan comes with practical coaching — cash-flow and record-keeping, pricing and
-                profit, inventory management, and digital-payment best practices — delivered by local
+                Every loan comes with practical coaching - cash-flow and record-keeping, pricing and
+                profit, inventory management, and digital-payment best practices - delivered by local
                 relationship officers.
               </p>
               <ul className="mt-5 space-y-2.5">

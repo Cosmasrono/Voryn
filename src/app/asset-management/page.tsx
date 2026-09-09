@@ -19,7 +19,7 @@ import SectionHeading from "@/components/SectionHeading";
 export const metadata: Metadata = {
   title: "Asset Management",
   description:
-    "Professional asset-management solutions from Voryn Capital — portfolio management, working-capital investment, asset finance and growth advisory for high-performing enterprises.",
+    "Professional asset-management solutions from Voryn Capital - portfolio management, working-capital investment, asset finance and growth advisory for high-performing enterprises.",
 };
 
 const services = [
@@ -27,7 +27,7 @@ const services = [
   { icon: TrendingUp, t: "Working-capital solutions", d: "Short-term investment and working-capital solutions structured around your cash cycles." },
   { icon: Briefcase, t: "Strategic capital allocation", d: "Growth advisory and capital allocation for high-performing micro and small enterprises." },
   { icon: Building, t: "Real-estate & project finance", d: "Financing support linked to business expansion, premises and productive projects." },
-  { icon: Tractor, t: "Asset finance", d: "Acquire productive assets — equipment, machinery, solar systems and agricultural tools." },
+  { icon: Tractor, t: "Asset finance", d: "Acquire productive assets - equipment, machinery, solar systems and agricultural tools." },
   { icon: Truck, t: "Commercial vehicles & tech", d: "Finance income-generating vehicles and technology that scale your operations." },
 ];
 
@@ -37,7 +37,7 @@ export default function AssetManagementPage() {
       <PageHero
         eyebrow="Asset Management"
         title="From a first loan to lasting wealth"
-        subtitle={`As part of ${site.group}, Voryn offers professional asset-management solutions that create a clear graduation path — from micro-loan to long-term value creation.`}
+        subtitle={`As part of ${site.group}, Voryn offers professional asset-management solutions that create a clear graduation path - from micro-loan to long-term value creation.`}
         crumbs={[{ label: "Home", href: "/" }, { label: "Asset Management" }]}
       />
 
@@ -55,7 +55,7 @@ export default function AssetManagementPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950/60 via-transparent to-transparent" />
             <p className="absolute bottom-5 left-6 max-w-md font-display text-lg font-semibold text-white sm:text-xl">
-              From the market stall to the city skyline — a path to lasting value.
+              From the market stall to the city skyline - a path to lasting value.
             </p>
           </div>
         </Reveal>
@@ -122,8 +122,8 @@ export default function AssetManagementPage() {
               Cash-flow based finance, not just collateral
             </h2>
             <p className="mt-4 text-silver-600">
-              We assess the actual strength of a business — sales, cash flows, transaction history and
-              repayment behaviour — rather than relying solely on traditional collateral. That means
+              We assess the actual strength of a business - sales, cash flows, transaction history and
+              repayment behaviour - rather than relying solely on traditional collateral. That means
               real businesses get real access to capital.
             </p>
             <ul className="mt-6 space-y-3">
@@ -152,7 +152,7 @@ export default function AssetManagementPage() {
               <p className="font-display text-xl font-bold text-gold-400">For institutional partners</p>
               <p className="mt-3 text-silver-300">
                 Voryn Capital partners with institutions seeking risk-managed exposure to Kenya&apos;s
-                productive micro and SME economy — with disciplined governance and transparent
+                productive micro and SME economy - with disciplined governance and transparent
                 reporting from {site.group}.
               </p>
               <div className="mt-6 grid grid-cols-2 gap-4">

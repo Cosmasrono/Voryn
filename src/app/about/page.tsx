@@ -10,7 +10,7 @@ import SectionHeading from "@/components/SectionHeading";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Voryn Capital Limited delivers responsible finance for micro and small enterprises across Kenya — backed by Voryn Group Holdings Limited.",
+    "Voryn Capital Limited delivers responsible finance for micro and small enterprises across Kenya - backed by Voryn Group Holdings Limited.",
 };
 
 const values = [
@@ -36,7 +36,7 @@ export default function AboutPage() {
           <div className="relative aspect-[21/9] overflow-hidden rounded-3xl border border-silver-200 shadow-xl">
             <Image
               src="/images/market-mackinnon.jpg"
-              alt="A busy Kenyan market — the businesses Voryn Capital serves"
+              alt="A busy Kenyan market - the businesses Voryn Capital serves"
               fill
               sizes="(max-width: 1280px) 100vw, 1200px"
               className="object-cover"
@@ -61,14 +61,14 @@ export default function AboutPage() {
             <div className="mt-5 space-y-4 text-silver-600">
               <p>
                 We deliver practical financial products designed specifically for micro and small
-                enterprises that traditional banks often overlook — informal traders, market vendors,
+                enterprises that traditional banks often overlook - informal traders, market vendors,
                 smallholder farmers, kiosk owners and women-led businesses.
               </p>
               <p>
                 We combine short-term working-capital loans, hands-on business advisory and
                 longer-term asset-management support to help clients grow sustainably. Everything is
                 delivered through a hybrid model of local relationship officers and simple digital
-                tools — primarily {site.mpesa} — for speed, transparency and accessibility.
+                tools - primarily {site.mpesa} - for speed, transparency and accessibility.
               </p>
               <p>
                 We believe finance should do more than provide short-term cash. Finance should help
@@ -91,7 +91,7 @@ export default function AboutPage() {
                 <Target className="h-7 w-7 text-gold-500" />
                 <h3 className="mt-3 font-display text-lg font-bold text-navy-800">Our Mission</h3>
                 <p className="mt-2 text-sm text-silver-600">
-                  To empower underserved communities with accessible, innovative financial solutions —
+                  To empower underserved communities with accessible, innovative financial solutions -
                   fostering entrepreneurship and sustainable economic growth.
                 </p>
               </div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
                 <p className="mt-2 text-sm text-silver-300">
                   Centred on <strong className="text-white">productive lending</strong>,{" "}
                   <strong className="text-white">business growth</strong> and{" "}
-                  <strong className="text-white">asset creation</strong> — with a clear graduation
+                  <strong className="text-white">asset creation</strong> - with a clear graduation
                   path from a first micro-loan to longer-term wealth building.
                 </p>
               </div>
@@ -145,7 +145,7 @@ export default function AboutPage() {
                   </h2>
                   <p className="mt-4 text-silver-300">
                     Voryn Capital is backed by the governance, capital strength and multi-sector
-                    expertise of the wider Voryn Group — giving clients a stable, well-run partner and
+                    expertise of the wider Voryn Group - giving clients a stable, well-run partner and
                     a clear path from micro-loan to long-term investment.
                   </p>
                   <Link

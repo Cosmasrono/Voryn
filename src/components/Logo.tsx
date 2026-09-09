@@ -7,7 +7,7 @@ type Props = {
 };
 
 /**
- * Voryn Capital logo — an SVG recreation of the V monogram
+ * Voryn Capital logo - an SVG recreation of the V monogram
  * (navy V with an upward growth stroke inside an open silver ring).
  * Swap this for the official logo asset when available.
  */
@@ -18,7 +18,7 @@ export default function Logo({ variant = "dark", withText = true, className = ""
   const arrow = "#c9a227";
 
   return (
-    <Link href="/" aria-label="Voryn Capital — home" className={`inline-flex items-center gap-3 ${className}`}>
+    <Link href="/" aria-label="Voryn Capital - home" className={`inline-flex items-center gap-3 ${className}`}>
       <svg width="42" height="42" viewBox="0 0 100 100" fill="none" aria-hidden="true">
         {/* open ring / swoosh */}
         <path

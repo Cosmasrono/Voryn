@@ -23,7 +23,7 @@ export default function PrivacyPage() {
             </p>
             {[
               ["Information we collect", "Contact and identity details, business information, and transaction and repayment data needed to assess and service your loan."],
-              ["How we use it", "To assess applications, disburse and service loans, provide advisory support, and improve our products — always on a lawful basis."],
+              ["How we use it", "To assess applications, disburse and service loans, provide advisory support, and improve our products - always on a lawful basis."],
               ["Sharing", "We share data only as necessary to provide our services, meet legal obligations, and with trusted partners under appropriate safeguards."],
               ["Mobile money", "Where you transact via M-Pesa or similar, relevant details are processed to disburse funds and record repayments."],
               ["Your rights", "You may request access to, correction of, or deletion of your personal data, subject to legal and regulatory requirements."],

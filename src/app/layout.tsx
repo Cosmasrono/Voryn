@@ -22,7 +22,7 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://voryncapital.co.ke"),
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: `${site.name} - ${site.tagline}`,
     template: `%s | ${site.shortName}`,
   },
   description: site.description,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "agri loan Kenya",
   ],
   openGraph: {
-    title: `${site.name} — ${site.tagline}`,
+    title: `${site.name} - ${site.tagline}`,
     description: site.description,
     type: "website",
     locale: "en_KE",
