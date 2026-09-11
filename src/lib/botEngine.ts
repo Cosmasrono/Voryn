@@ -32,7 +32,7 @@ function predictLoanForAmount(amount: number): string {
     if (amount < 5000) {
       return `Our smallest seasonal loan starts at **KES 5,000** for **Voryn Agri-Boost** or **Voryn Mama Biashara**.\n\nFor new business clients, our direct entry product is **Voryn Biashara** (KES 10,000 – 20,000). Repaying on time builds your trust score and unlocks all other products!\n\nWould you like to start an application for KES 10,000 with an officer on **${site.phone}**?`;
     }
-    return `For amounts up to **KES 150,000**, our **Voryn Asset Loan** finances delivery motorcycles and productive machinery, and **Voryn Biashara** scales up to **KES 20,000** for repeat borrowers.\n\nCall our credit team directly on **${site.phone}** or message us on WhatsApp to discuss your facility!`;
+    return `For amounts up to **KES 150,000**, our **Voryn Asset Loan** finances productive equipment, commercial machinery, tools, and delivery motorcycles, and **Voryn Biashara** scales up to **KES 20,000** for repeat borrowers.\n\nCall our credit team directly on **${site.phone}** or message us on WhatsApp to discuss your facility!`;
   }
 
   let text = `For **${formatKES(amount)}**, here are the matching facilities:\n\n`;
@@ -74,7 +74,7 @@ export function generateLocalBotReply(messages: { role: string; content: string 
       `   • 👥 **Voryn Chama** (KES 10k–30k for groups)\n` +
       `   • 🌱 **Voryn Agri-Boost** (KES 5k–20k for farm cycles)\n` +
       `   • 🚀 **Voryn Growth** (KES 21k–100k for bulk orders)\n` +
-      `   • 🏍️ **Voryn Asset Loan** (KES 10k–150k for motorcycles & equipment)\n\n` +
+      `   • 🛠️ **Voryn Asset Loan** (KES 10k–150k for productive equipment, machinery & motorcycles)\n\n` +
       `Ready to take your first step? Call or WhatsApp us on **${site.phone}**!`;
   }
 
@@ -107,10 +107,10 @@ export function generateLocalBotReply(messages: { role: string; content: string 
     query.includes("chiller")
   ) {
     const p = products.find((x) => x.slug === "voryn-asset-loan")!;
-    return `🏍️ **${p.name}** (${p.short}):\n\n` +
+    return `🛠️ **${p.name}** (${p.short}):\n\n` +
       `• **Limit:** ${formatKES(p.min)} – ${formatKES(p.max)}\n` +
       `• **Tenure:** ${p.tenure} (comfortable monthly installments)\n` +
-      `• **Target Assets:** Delivery motorcycles (boda boda / courier), workshop tools, commercial refrigeration, posho mill motors, and salon equipment.\n` +
+      `• **Target Assets:** Productive business assets tailored to your needs — commercial refrigeration, posho mill motors, tailoring machinery, salon equipment, workshop tools, and delivery motorcycles (boda boda / courier).\n` +
       `• **Security:** The asset itself serves as productive security — **no land title deeds needed**!\n` +
       `• **Graduation Status:** Unlocked for business owners who have built trust through Voryn Biashara or have verified daily income.\n\n` +
       `Would you like to speak to an asset portfolio officer on **${site.phone}**?`;
@@ -146,18 +146,18 @@ export function generateLocalBotReply(messages: { role: string; content: string 
     query.includes("bidhaa")
   ) {
     return `We offer **6 tailored loan facilities** with instant M-Pesa disbursement:\n\n` +
-      `1. 🏪 **Voryn Biashara** (KES 10,000 – 20,000 | 1–6 months)\n` +
+      `1. 🏪 **Voryn Biashara** (KES 10,000 – 20,000 | 7–30 days)\n` +
       `   *The required starter loan for all new business clients.* Working capital for retail, shops & services.\n\n` +
       `2. 👥 **Voryn Chama** (KES 10,000 – 30,000 | 1–3 months)\n` +
       `   Group financing for table-banking and joint trade ventures.\n\n` +
-      `3. 🌸 **Voryn Mama Biashara** (KES 5,000 – 50,000 | 21–45 days)\n` +
+      `3. 🌸 **Voryn Mama Biashara** (KES 5,000 – 50,000 | 7–30 days)\n` +
       `   Priority support and coaching for female traders and stallholders.\n\n` +
       `4. 🌱 **Voryn Agri-Boost** (KES 5,000 – 20,000 | 30–90 days)\n` +
       `   Seasonal crop, dairy, and farm inputs aligned with your harvest.\n\n` +
       `5. 🚀 **Voryn Growth** (KES 21,000 – 100,000 | 30–90 days)\n` +
       `   Scale-up working capital for bulk orders and expanding stock lines.\n\n` +
-      `6. 🏍️ **Voryn Asset Loan** (KES 10,000 – 150,000 | 1–12 months)\n` +
-      `   Finance delivery motorcycles (boda boda), machinery, tools, and equipment.\n\n` +
+      `6. 🛠️ **Voryn Asset Loan** (KES 10,000 – 150,000 | 1–12 months)\n` +
+      `   Finance productive business assets, equipment, machinery, tools, or delivery motorcycles (boda boda).\n\n` +
       `New to Voryn? Start with **Voryn Biashara** today! Tell me what business you operate to get matched.`;
   }
 
@@ -255,19 +255,19 @@ export function generateLocalBotReply(messages: { role: string; content: string 
     query.includes("niaje") ||
     query.includes("hujambo")
   ) {
-    return `Salama! 👋 Mimi ni **Vori**, msaidizi wako wa **Voryn Capital**.\n\nTunatoa mikopo ya haraka ya biashara bila kuitisha hati miliki ya ardhi (title deed) kupitia **M-Pesa**:\n• **Voryn Biashara** (KES 10k–250k kwa wateja wote wapya)\n• **Voryn Chama** (KES 10k–30k kwa vikundi vya chamas & table-banking)\n• **Voryn Asset Loan** (KES 10k–150k kwa pikipiki/boda boda na mashine za kazi)\n• **Voryn Agri-Boost** (KES 5k–20k kwa wakulima)\n• **Voryn Growth** (KES 21k–100k)\n\nWateja wapya wanaanza na **Voryn Biashara**, kisha wanapandishwa daraja (graduate) baada ya kulipa kwa wakati!\n\nJe, unahitaji mkopo wa kiasi gani kwa biashara yako leo?`;
+    return `Salama! 👋 Mimi ni **Vori**, msaidizi wako wa **Voryn Capital**.\n\nTunatoa mikopo ya haraka ya biashara bila kuitisha hati miliki ya ardhi (title deed) kupitia **M-Pesa**:\n• **Voryn Biashara** (KES 10k–20k kwa wateja wote wapya)\n• **Voryn Chama** (KES 10k–30k kwa vikundi vya chamas & table-banking)\n• **Voryn Asset Loan** (KES 10k–150k kwa vifaa vya kazi, mashine za biashara, na pikipiki/boda boda)\n• **Voryn Agri-Boost** (KES 5k–20k kwa wakulima)\n• **Voryn Growth** (KES 21k–100k)\n\nWateja wapya wanaanza na **Voryn Biashara**, kisha wanapandishwa daraja (graduate) baada ya kulipa kwa wakati!\n\nJe, unahitaji mkopo wa kiasi gani kwa biashara yako leo?`;
   }
 
   // 11. General greetings
   if (query === "hi" || query === "hello" || query === "hey" || query.startsWith("good morning") || query.startsWith("good afternoon") || query.startsWith("good evening")) {
-    return `Hello! 👋 I'm **Vori**, your Voryn Capital assistant.\n\nI can help you:\n• Explore our 6 tailored loan products (including motorcycle asset loans & chamas)\n• Understand how new clients start with **Voryn Biashara** and graduate with trust\n• Estimate your repayments and installments\n• Connect you directly with a local relationship officer\n\nWhat type of enterprise do you run, or how much capital are you looking for?`;
+    return `Hello! 👋 I'm **Vori**, your Voryn Capital assistant.\n\nI can help you:\n• Explore our 6 tailored loan products (including general asset & equipment financing, motorcycles & chamas)\n• Understand how new clients start with **Voryn Biashara** and graduate with trust\n• Estimate your repayments and installments\n• Connect you directly with a local relationship officer\n\nWhat type of enterprise do you run, or how much capital are you looking for?`;
   }
 
   // 12. Fallback
   return `Thank you for reaching out! **Voryn Capital** provides responsible working-capital and asset financing (from **KES 5,000 up to KES 250,000**) disbursed directly to **M-Pesa**.\n\n` +
     `Here is how I can help right now:\n` +
     `• 💼 **New Clients**: Start with **Voryn Biashara** to establish your trust record.\n` +
-    `• 🏍️ **Asset & Motorcycle Loans**: Learn about financing a boda boda, machinery, or tools (up to KES 150K).\n` +
+    `• 🛠️ **Asset & Equipment Loans**: Learn about financing productive tools, machinery, commercial equipment, or a boda boda (up to KES 150K).\n` +
     `• 👥 **Chama Groups**: Explore table-banking loans for groups (up to KES 30K).\n` +
     `• 📞 **Speak with Us**: Call or WhatsApp our desk on **${site.phone}**.\n\n` +
     `What specific question can I answer for you?`;

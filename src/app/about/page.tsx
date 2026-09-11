@@ -82,8 +82,8 @@ export default function AboutPage() {
               </p>
               <p>
                 We combine foundational starter working-capital loans (Voryn Biashara), group table-banking
-                facilities (Voryn Chama), seasonal farm financing, and productive asset loans for motorcycles
-                and machinery. Everything is delivered through dedicated on-the-ground relationship officers
+                facilities (Voryn Chama), seasonal farm financing, and productive asset loans for business equipment,
+                machinery, and motorcycles. Everything is delivered through dedicated on-the-ground relationship officers
                 and fast digital disbursement via {site.mpesa}.
               </p>
               <p>
@@ -114,7 +114,7 @@ export default function AboutPage() {
               <div className="rounded-2xl bg-navy-900 p-6 text-white sm:col-span-2 shadow-md">
                 <p className="font-display text-lg font-bold text-gold-400">Our Graduation Approach</p>
                 <p className="mt-2 text-sm text-silver-300 leading-relaxed">
-                  First-time clients start with <strong className="text-white">Voryn Biashara</strong>. With consistent on-time repayments, clients build their trust rating and graduate to specialized group chamas, seasonal agricultural credit, and asset loans for delivery motorcycles and equipment.
+                  First-time clients start with <strong className="text-white">Voryn Biashara</strong>. With consistent on-time repayments, clients build their trust rating and graduate to specialized group chamas, seasonal agricultural credit, and asset loans for productive equipment, machinery, and delivery motorcycles.
                 </p>
               </div>
             </div>

@@ -13,7 +13,7 @@ import GraduationPathway from "@/components/GraduationPathway";
 export const metadata: Metadata = {
   title: "Loan Products & Graduation Pathway",
   description:
-    "Explore Voryn Capital's six loan products - from Voryn Biashara starter working capital to Voryn Chama, Agri-Boost, Growth, and Voryn Asset Loan for motorcycles and machinery.",
+    "Explore Voryn Capital's six loan products - from Voryn Biashara starter working capital to Voryn Chama, Agri-Boost, Growth, and Voryn Asset Loan for productive equipment, machinery, tools, and motorcycles.",
 };
 
 export default function ProductsPage() {
@@ -22,7 +22,7 @@ export default function ProductsPage() {
       <PageHero
         eyebrow="Loan Products"
         title="Finance tailored to the real rhythm of your trade"
-        subtitle="Six focused facilities covering starter working capital, group chamas, women entrepreneurs, seasonal farming, and asset loans for delivery motorcycles and equipment."
+        subtitle="Six focused facilities covering starter working capital, group chamas, women entrepreneurs, seasonal farming, and asset loans for productive business equipment, machinery, and motorcycles."
         crumbs={[{ label: "Home", href: "/" }, { label: "Loan Products" }]}
       />
 
@@ -139,7 +139,7 @@ export default function ProductsPage() {
               {
                 icon: Bike,
                 t: "Productive Assets",
-                d: "Finance delivery motorcycles and tools without putting up land title deeds.",
+                d: "Finance productive equipment, commercial machinery, tools, and delivery motorcycles without putting up land title deeds.",
               },
             ].map((f) => (
               <div

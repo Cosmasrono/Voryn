@@ -59,7 +59,7 @@ const levels: PathwayLevel[] = [
       "Voryn Chama: KES 10,000 – 30,000 for table-banking & group joint investments",
       "Voryn Agri-Boost: KES 5,000 – 20,000 synchronized to seasonal crop & livestock cycles",
       "Voryn Mama Biashara: Priority terms and coaching for women stallholders",
-      "Flexible tenures: 21 to 90 days matching your trade cash-flow rhythm",
+      "Flexible tenures: 7 to 90 days matching your trade cash-flow rhythm",
     ],
   },
   {
@@ -72,7 +72,7 @@ const levels: PathwayLevel[] = [
     unlockCriteria: "Established repayment track record and strong ongoing daily turnover.",
     loanSlugs: ["voryn-asset-loan", "voryn-growth"],
     perks: [
-      "Voryn Asset Loan: KES 10,000 – 150,000 for motorcycles (boda boda), machinery & tools",
+      "Voryn Asset Loan: KES 10,000 – 150,000 for productive equipment, machinery, tools & motorcycles (boda boda)",
       "Voryn Growth: KES 21,000 – 100,000 for bulk stock & business expansion",
       "Longer tenures up to 12 months with predictable monthly repayment",
       "Asset acts as the primary productive security — ownership transfers 100% to you",
@@ -111,7 +111,7 @@ export default function GraduationPathway({
           </h2>
           <p className="mt-4 text-base sm:text-lg text-silver-300 leading-relaxed">
             We don&apos;t ask for land title deeds or car logbooks. For all new clients, you begin with{" "}
-            <strong className="text-white">Voryn Biashara</strong>. As you repay on time and build trust, you graduate to unlock specialized group loans, agricultural finance, and asset loans for motorcycles and machinery.
+            <strong className="text-white">Voryn Biashara</strong>. As you repay on time and build trust, you graduate to unlock specialized group loans, agricultural finance, and asset loans for productive equipment, machinery, and motorcycles.
           </p>
         </div>
 

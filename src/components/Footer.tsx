@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MapPin, Mail, Phone } from "lucide-react";
 import Logo from "./Logo";
-import { site, nav } from "@/lib/site";
+import { site, emails } from "@/lib/site";
 import { products } from "@/lib/products";
 
 const socialPaths: Record<string, string> = {
@@ -94,7 +94,15 @@ export default function Footer() {
             Company
           </h4>
           <ul className="mt-4 space-y-2.5 text-sm">
-            {nav.map((n) => (
+            {[
+              { label: "Home", href: "/" },
+              { label: "About", href: "/about" },
+              { label: "Governance", href: "/governance" },
+              { label: "Careers", href: "/careers" },
+              { label: "News", href: "/news" },
+              { label: "FAQs", href: "/faqs" },
+              { label: "Contact", href: "/contact" },
+            ].map((n) => (
               <li key={n.href}>
                 <Link
                   href={n.href}
@@ -143,10 +151,28 @@ export default function Footer() {
             <li className="flex gap-2.5">
               <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
               <a
-                href={`mailto:${site.email}`}
+                href={`mailto:${emails.info}`}
                 className="break-all text-silver-400 hover:text-gold-400"
               >
-                {site.email}
+                {emails.info}
+              </a>
+            </li>
+            <li className="flex gap-2.5">
+              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
+              <a
+                href={`mailto:${emails.loans}`}
+                className="break-all text-silver-400 hover:text-gold-400"
+              >
+                {emails.loans}
+              </a>
+            </li>
+            <li className="flex gap-2.5">
+              <Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold-500" />
+              <a
+                href={`mailto:${emails.hr}`}
+                className="break-all text-silver-400 hover:text-gold-400"
+              >
+                {emails.hr}
               </a>
             </li>
             <li className="pt-1 text-xs text-silver-500">{site.hours}</li>

@@ -191,12 +191,16 @@ export default function LoanCalculator({
               </div>
               <div className="flex items-center justify-between border-b border-white/10 pb-3">
                 <dt className="text-silver-300">
-                  Service fee{" "}
+                  Interest / service fee{" "}
                   <span className="text-silver-500">
                     ({est.feePercentOfPrincipal.toFixed(1)}% over term)
                   </span>
                 </dt>
                 <dd className="font-semibold">{kes0(est.fee)}</dd>
+              </div>
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <dt className="text-silver-300">Indicative rate</dt>
+                <dd className="font-semibold">{(product.rateMonthly * 100).toFixed(1)}% per month</dd>
               </div>
               <div className="flex items-center justify-between">
                 <dt className="text-silver-300">Total repayable</dt>
@@ -215,12 +219,12 @@ export default function LoanCalculator({
               Apply for {product.name.replace("Voryn ", "")}
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <p className="mt-4 flex items-start gap-2 text-xs leading-relaxed text-silver-400">
-              <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />
-              Figures are indicative estimates for illustration only, based on a sample monthly
-              service fee - not an offer of credit or a quotation. Final terms are confirmed on
-              application, subject to assessment.
-            </p>
+            <div className="mt-4 flex items-start gap-2.5 rounded-xl bg-white/[0.06] p-3 border border-white/10 text-xs leading-relaxed text-silver-300">
+              <Info className="mt-0.5 h-4 w-4 shrink-0 text-gold-400" />
+              <span>
+                <strong className="text-white">Competitive Interest Rates:</strong> Rates are indicative and competitive, tailored to each borrower depending on their individual credit-risk assessment, enterprise performance, and repayment history. This calculation is for illustration purposes.
+              </span>
+            </div>
           </div>
         </div>
       </div>

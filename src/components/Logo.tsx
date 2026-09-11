@@ -4,6 +4,7 @@ type Props = {
   variant?: "dark" | "light";
   withText?: boolean;
   className?: string;
+  size?: "sm" | "md" | "lg";
 };
 
 /**
@@ -11,15 +12,21 @@ type Props = {
  * (navy V with an upward growth stroke inside an open silver ring).
  * Swap this for the official logo asset when available.
  */
-export default function Logo({ variant = "dark", withText = true, className = "" }: Props) {
+export default function Logo({ variant = "dark", withText = true, className = "", size = "md" }: Props) {
   const navy = variant === "light" ? "#ffffff" : "#1b2a5b";
   const sub = variant === "light" ? "#c9a227" : "#6b7280";
   const ring = variant === "light" ? "rgba(255,255,255,0.55)" : "#9aa1ad";
   const arrow = "#c9a227";
 
+  const isLg = size === "lg";
+  const isSm = size === "sm";
+  const svgDim = isLg ? 48 : isSm ? 38 : 44;
+  const titleClass = isLg ? "text-[1.55rem]" : isSm ? "text-[1.25rem]" : "text-[1.4rem]";
+  const subClass = isLg ? "text-[0.68rem] tracking-[0.28em]" : isSm ? "text-[0.58rem] tracking-[0.26em]" : "text-[0.62rem] tracking-[0.28em]";
+
   return (
-    <Link href="/" aria-label="Voryn Capital - home" className={`inline-flex items-center gap-3 ${className}`}>
-      <svg width="42" height="42" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+    <Link href="/" aria-label="Voryn Capital - home" className={`inline-flex items-center gap-3.5 ${className}`}>
+      <svg width={svgDim} height={svgDim} viewBox="0 0 100 100" fill="none" aria-hidden="true">
         {/* open ring / swoosh */}
         <path
           d="M50 8 a42 42 0 1 1 -29.7 12.3"
@@ -52,13 +59,13 @@ export default function Logo({ variant = "dark", withText = true, className = ""
       {withText && (
         <span className="leading-none">
           <span
-            className="block font-display text-[1.35rem] font-extrabold tracking-tight"
+            className={`block font-display ${titleClass} font-extrabold tracking-tight`}
             style={{ color: navy }}
           >
             VORYN
           </span>
           <span
-            className="block text-[0.6rem] font-semibold tracking-[0.28em]"
+            className={`block ${subClass} font-semibold`}
             style={{ color: sub }}
           >
             CAPITAL LIMITED

@@ -2,15 +2,37 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import Logo from "./Logo";
-import { nav, site } from "@/lib/site";
+import { site } from "@/lib/site";
+
+// ── Primary nav (always visible in desktop) ─────────────────────────────────
+const primaryNav = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Loan Products", href: "/products" },
+  { label: "Advisory", href: "/advisory" },
+  { label: "Asset Management", href: "/asset-management" },
+];
+
+// ── Secondary nav (shown in "More" dropdown on desktop) ─────────────────────
+const moreNav = [
+  { label: "Governance", href: "/governance" },
+  { label: "Careers", href: "/careers" },
+  { label: "News", href: "/news" },
+  { label: "FAQs", href: "/faqs" },
+];
+
+// ── All nav items (for mobile menu) ─────────────────────────────────────────
+const allNav = [...primaryNav, ...moreNav, { label: "Contact", href: "/contact" }];
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
+  const moreRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -21,7 +43,21 @@ export default function Navbar() {
 
   useEffect(() => {
     setOpen(false);
+    setMoreOpen(false);
   }, [pathname]);
+
+  // Close "More" dropdown when clicking outside
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (moreRef.current && !moreRef.current.contains(e.target as Node)) {
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, []);
+
+  const moreActive = moreNav.some((item) => pathname.startsWith(item.href));
 
   return (
     <header
@@ -31,52 +67,99 @@ export default function Navbar() {
           : "bg-white border-b border-transparent"
       }`}
     >
-      {/* Gold top accent strip - visible when scrolled */}
+      {/* Gold top accent strip */}
       <div
         className={`absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-gold-500/0 via-gold-500 to-gold-500/0 transition-opacity duration-500 ${
           scrolled ? "opacity-100" : "opacity-0"
         }`}
       />
 
-      <div className="container-x flex h-18 items-center justify-between py-3">
-        <Logo />
+      <div className="container-x flex min-h-[5.25rem] lg:min-h-[5.75rem] items-center justify-between py-3.5 lg:py-4">
+        <Logo size="lg" />
 
-        <nav className="hidden items-center gap-1 lg:flex">
-          {nav.map((item) => {
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-1 xl:gap-2 lg:flex">
+          {primaryNav.map((item) => {
             const active =
               item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+                className={`relative rounded-full px-4 py-2.5 text-[15px] xl:text-[16px] font-semibold transition-all duration-200 ${
                   active
-                    ? "text-navy-700 bg-navy-50"
-                    : "text-silver-500 hover:text-navy-700 hover:bg-silver-100/70"
+                    ? "text-navy-900 bg-navy-50/90 font-bold"
+                    : "text-silver-600 hover:text-navy-900 hover:bg-silver-100/80"
                 }`}
               >
                 {item.label}
                 {active && (
-                  <span className="absolute bottom-1 left-1/2 -translate-x-1/2 block h-0.5 w-4 rounded-full bg-gold-500" />
+                  <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 block h-[2.5px] w-5 rounded-full bg-gold-500 shadow-sm" />
                 )}
               </Link>
             );
           })}
+
+          {/* "More" dropdown */}
+          <div ref={moreRef} className="relative">
+            <button
+              onClick={() => setMoreOpen((v) => !v)}
+              className={`flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[15px] xl:text-[16px] font-semibold transition-all duration-200 ${
+                moreActive
+                  ? "text-navy-900 bg-navy-50/90 font-bold"
+                  : "text-silver-600 hover:text-navy-900 hover:bg-silver-100/80"
+              }`}
+            >
+              More
+              <ChevronDown
+                className={`h-4 w-4 transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`}
+              />
+              {moreActive && (
+                <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 block h-[2.5px] w-5 rounded-full bg-gold-500 shadow-sm" />
+              )}
+            </button>
+
+            {/* Dropdown panel */}
+            <div
+              className={`absolute right-0 top-full mt-2.5 w-52 overflow-hidden rounded-2xl border border-silver-200 bg-white p-1.5 shadow-2xl transition-all duration-200 ${
+                moreOpen
+                  ? "opacity-100 translate-y-0 pointer-events-auto"
+                  : "opacity-0 -translate-y-2 pointer-events-none"
+              }`}
+            >
+              {moreNav.map((item) => {
+                const active = pathname.startsWith(item.href);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`flex items-center gap-2 rounded-xl px-4 py-3 text-[15px] font-semibold transition-colors ${
+                      active
+                        ? "bg-navy-50 text-navy-800 border-l-2 border-gold-500"
+                        : "text-silver-700 hover:bg-silver-50 hover:text-navy-900"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-4 xl:gap-5 lg:flex">
           <a
             href={`tel:${site.phoneHref}`}
-            className="group flex items-center gap-2 text-sm font-semibold text-navy-700 transition-colors hover:text-gold-600"
+            className="group flex items-center gap-2.5 text-[15px] font-semibold text-navy-800 transition-colors hover:text-gold-600"
           >
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gold-500/10 ring-1 ring-gold-500/30 group-hover:bg-gold-500/20 transition-colors">
-              <Phone className="h-3.5 w-3.5 text-gold-600" />
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-500/10 ring-1 ring-gold-500/30 group-hover:bg-gold-500/20 group-hover:scale-105 transition-all">
+              <Phone className="h-4 w-4 text-gold-600" />
             </span>
-            {site.phone}
+            <span>{site.phone}</span>
           </a>
           <Link
             href="/contact"
-            className="btn-gold rounded-full bg-navy-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm"
+            className="btn-gold rounded-full bg-navy-700 hover:bg-navy-800 px-6 py-2.5 xl:py-3 text-[15px] font-bold text-white shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
           >
             Apply Now
           </Link>
@@ -84,29 +167,29 @@ export default function Navbar() {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-navy-700 transition-colors hover:bg-silver-100 lg:hidden"
+          className="inline-flex items-center justify-center rounded-xl p-2.5 text-navy-700 transition-colors hover:bg-silver-100 lg:hidden"
           aria-label="Toggle menu"
           aria-expanded={open}
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
         </button>
       </div>
 
       {/* Mobile menu */}
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out lg:hidden ${
-          open ? "max-h-[500px] border-t border-silver-200 bg-white" : "max-h-0"
+          open ? "max-h-[600px] border-t border-silver-200 bg-white" : "max-h-0"
         }`}
       >
         <nav className="container-x flex flex-col gap-1 py-4">
-          {nav.map((item) => {
+          {allNav.map((item) => {
             const active =
               item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-2 rounded-xl px-4 py-3 text-base font-semibold transition-colors ${
+                className={`flex items-center gap-2 rounded-xl px-4 py-3.5 text-base font-semibold transition-colors ${
                   active
                     ? "bg-navy-50 text-navy-700 border-l-2 border-gold-500"
                     : "text-silver-600 hover:bg-silver-50 hover:text-navy-700"
@@ -118,15 +201,15 @@ export default function Navbar() {
           })}
           <Link
             href="/contact"
-            className="mt-2 rounded-xl bg-navy-700 px-4 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-navy-800"
+            className="mt-2 rounded-xl bg-navy-700 px-4 py-3.5 text-center text-base font-bold text-white transition-colors hover:bg-navy-800 shadow-md"
           >
             Apply Now
           </Link>
           <a
             href={`tel:${site.phoneHref}`}
-            className="flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold text-navy-700"
+            className="flex items-center justify-center gap-2.5 px-4 py-3.5 text-[15px] font-semibold text-navy-800"
           >
-            <Phone className="h-4 w-4 text-gold-500" /> {site.phone}
+            <Phone className="h-4.5 w-4.5 text-gold-500" /> {site.phone}
           </a>
         </nav>
       </div>

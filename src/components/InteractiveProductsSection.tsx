@@ -21,7 +21,7 @@ export default function InteractiveProductsSection({
     { id: "all", label: `All Loans (${products.length})` },
     { id: "starter", label: "Starter Loan (New Clients)" },
     { id: "graduation", label: "Graduation Loans" },
-    { id: "asset", label: "Asset & Motorcycles" },
+    { id: "asset", label: "Asset & Equipment" },
     { id: "chama", label: "Chama & Groups" },
     { id: "agri", label: "Agriculture" },
   ];

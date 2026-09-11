@@ -8,7 +8,7 @@ export const site = {
   group: "Voryn Group Holdings Limited",
   phone: "+254 722 473 078",
   phoneHref: "+254722473078",
-  email: "voryncapital@gmail.com",
+  email: "info@voryncapital.co.ke",
   address: "Taj Tower, Upper Hill, Nairobi",
   hours: "Mon – Sat, 8:00 AM – 5:00 PM",
   mpesa: "M-Pesa",
@@ -26,12 +26,25 @@ export const nav = [
   { label: "Loan Products", href: "/products" },
   { label: "Business Advisory", href: "/advisory" },
   { label: "Asset Management", href: "/asset-management" },
+  { label: "Governance", href: "/governance" },
+  { label: "Careers", href: "/careers" },
+  { label: "News", href: "/news" },
+  { label: "FAQs", href: "/faqs" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const stats = [
-  { value: 250, prefix: "KES ", suffix: "K", label: "Working-capital limit, unsecured" },
+  { value: 150, prefix: "KES ", suffix: "K", label: "Productive-asset limit" },
   { value: 24, prefix: "", suffix: "h", label: "Typical disbursement for repeat clients" },
   { value: 6, prefix: "", suffix: "", label: "Tailored loan products at launch" },
   { value: 100, prefix: "", suffix: "%", label: "Disbursed & repaid via M-Pesa" },
 ];
+
+/** Corporate department email addresses */
+export const emails = {
+  info: "info@voryncapital.co.ke",
+  loans: "loans@voryncapital.co.ke",
+  hr: "hr@voryncapital.co.ke",
+  compliance: "compliance@voryncapital.co.ke",
+  admin: "admin@voryncapital.co.ke",
+};

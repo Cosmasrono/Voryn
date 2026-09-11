@@ -103,14 +103,14 @@ const trustedBadges = [
   "No Land Titles Needed",
   "Clear Plain Terms",
   "New Client Starter Loan",
-  "Motorcycle & Asset Financing",
+  "Productive Asset Financing",
   "Chama Group Loans",
   "Direct Human Support",
   "M-Pesa Enabled",
   "No Land Titles Needed",
   "Clear Plain Terms",
   "New Client Starter Loan",
-  "Motorcycle & Asset Financing",
+  "Productive Asset Financing",
 ];
 
 export default function Home() {
@@ -162,7 +162,7 @@ export default function Home() {
 
               <Reveal delay={0.14}>
                 <p className="mt-6 max-w-xl text-lg leading-relaxed text-silver-300">
-                  Sensible working capital, Chama group finance, and asset loans for motorcycles and machinery. For new clients, start with <strong className="text-white font-semibold">Voryn Biashara</strong> and graduate to unlock higher limits as you build trust.
+                  Sensible working capital, Chama group finance, and asset loans for productive equipment, machinery, and motorcycles. For new clients, start with <strong className="text-white font-semibold">Voryn Biashara</strong> and graduate to unlock higher limits as you build trust.
                 </p>
               </Reveal>
 
@@ -189,7 +189,7 @@ export default function Home() {
                 <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-silver-300">
                   {[
                     "Starter: Voryn Biashara",
-                    "Asset & Motorcycle loans",
+                    "Asset & Equipment loans",
                     "Instant M-Pesa",
                     "Zero hidden fees",
                   ].map((t) => (
@@ -246,7 +246,7 @@ export default function Home() {
                     },
                     {
                       label: "Stage 4: Asset & Scale",
-                      loan: "Asset Loan (Motorcycle/Equip)",
+                      loan: "Asset Loan (Equip & Machinery)",
                       value: "Up to KES 150,000",
                       w: "100%",
                     },
@@ -275,7 +275,7 @@ export default function Home() {
                 <div className="relative mt-5 flex items-start gap-2.5 rounded-xl bg-gold-500/12 p-3 text-xs text-gold-200 border border-gold-500/20">
                   <ShieldCheck className="h-4 w-4 shrink-0 text-gold-400 mt-0.5" />
                   <span>
-                    <strong>New clients start with Voryn Biashara.</strong> Repaying reliably unlocks our motorcycle asset loans, group chamas, and higher limits.
+                    <strong>New clients start with Voryn Biashara.</strong> Repaying reliably unlocks our asset &amp; equipment loans, group chamas, and higher limits.
                   </span>
                 </div>
               </div>
@@ -413,7 +413,7 @@ export default function Home() {
             <div className="mt-8 grid grid-cols-2 gap-4">
               {[
                 { k: "Everyday Traders", v: "Retail stores, stalls & mini-marts" },
-                { k: "Asset Owners", v: "Motorcycles, tools & machinery" },
+                { k: "Asset Owners", v: "Equipment, machinery & vehicles" },
                 { k: "Chamas & Groups", v: "Table-banking & group savings" },
                 { k: "Seasonal Farmers", v: "Crop cycles & livestock finance" },
               ].map((c) => (
@@ -506,11 +506,11 @@ export default function Home() {
                 Asset financing &amp; long-term ownership
               </h3>
               <p className="relative mt-3 text-silver-300 leading-relaxed">
-                As part of {site.group}, we assist entrepreneurs in acquiring productive machinery, delivery motorcycles, and equipment that turn daily sweat into lasting equity.
+                As part of {site.group}, we assist entrepreneurs in acquiring productive machinery, commercial equipment, tools, and delivery motorcycles that turn daily sweat into lasting equity.
               </p>
               <ul className="relative mt-5 space-y-2.5">
                 {[
-                  "Delivery motorcycle (boda boda / courier) financing up to KES 150K",
+                  "Commercial equipment, machinery, tools & delivery motorcycles up to KES 150K",
                   "Workshop machines, tailoring equipment & posho mill motors",
                   "Commercial cooling units & barbershop/salon setups",
                   "Smooth transition from micro-loans to asset ownership",

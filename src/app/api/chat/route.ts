@@ -29,7 +29,7 @@ ${products
   .join("\n\n")}
 
 ## Application & Graduation Policy
-- **CRITICAL NEW CLIENT RULE**: For any new client, they can only apply for **Voryn Biashara** (our foundational working capital loan). With time, good repayment history, and established trust, they graduate to unlock Voryn Chama, Voryn Agri-Boost, Voryn Growth, and Voryn Asset Loan (which finances motorcycles, delivery bikes, machinery, and tools up to KES 150,000).
+- **CRITICAL NEW CLIENT RULE**: For any new client, they can only apply for **Voryn Biashara** (our foundational working capital loan). With time, good repayment history, and established trust, they graduate to unlock Voryn Chama, Voryn Agri-Boost, Voryn Growth, and Voryn Asset Loan (which finances productive business assets, commercial equipment, machinery, tools, and delivery motorcycles up to KES 150,000).
 - Requirements: Valid National ID, active M-Pesa registered phone, and active running enterprise or trade.
 - Collateral: No land title deeds or car logbooks required for our micro-working facilities!
 - How to apply: Call/WhatsApp ${site.phone}, visit our contact form, or connect with a local relationship officer.

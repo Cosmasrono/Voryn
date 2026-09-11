@@ -366,8 +366,17 @@ export default function ProductModal({
                       <dd className="font-semibold text-navy-900">{kes0(est.amount)}</dd>
                     </div>
                     <div className="flex justify-between">
-                      <dt className="text-silver-600">Indicative Service Fee</dt>
+                      <dt className="text-silver-600">
+                        Interest &amp; Service Fee{" "}
+                        <span className="text-silver-400 font-normal">
+                          ({est.feePercentOfPrincipal.toFixed(1)}%)
+                        </span>
+                      </dt>
                       <dd className="font-semibold text-navy-900">{kes0(est.fee)}</dd>
+                    </div>
+                    <div className="flex justify-between">
+                      <dt className="text-silver-600">Indicative Rate</dt>
+                      <dd className="font-semibold text-navy-900">{(product.rateMonthly * 100).toFixed(1)}% / mo</dd>
                     </div>
                     <div className="flex justify-between border-t border-silver-200 pt-2 font-bold text-navy-900">
                       <dt>Total Repayable</dt>
@@ -376,13 +385,16 @@ export default function ProductModal({
                   </dl>
                 </div>
 
-                <div className="mt-5 rounded-xl bg-white p-3 border border-silver-200 text-xs text-silver-600">
-                  <p className="flex items-center gap-1.5 font-semibold text-navy-800">
-                    <CheckCircle2 className="h-3.5 w-3.5 text-emerald-600" />
-                    Zero hidden fees • Paid directly via M-Pesa
+                <div className="mt-5 rounded-xl bg-white p-3.5 border border-silver-200 text-xs text-silver-600 shadow-sm">
+                  <p className="flex items-center gap-1.5 font-bold text-navy-800">
+                    <CheckCircle2 className="h-4 w-4 text-emerald-600 shrink-0" />
+                    Competitive Interest Rates • Zero Hidden Fees
                   </p>
-                  <p className="mt-1 text-[0.68rem] text-silver-400">
-                    Figures are indicative estimates for planning purposes. Final terms are confirmed upon review.
+                  <p className="mt-1.5 text-xs text-silver-600 leading-relaxed">
+                    Our interest rates are competitive and tailored to each client depending on their individual credit-risk assessment, enterprise performance, and repayment history.
+                  </p>
+                  <p className="mt-1 text-[0.7rem] text-silver-400">
+                    * Figures shown are illustrative estimates. Final terms are confirmed upon credit evaluation.
                   </p>
                 </div>
               </div>
@@ -518,7 +530,7 @@ export default function ProductModal({
                     </span>
                   </div>
                   <p className="mt-2 text-xs sm:text-sm text-silver-600">
-                    Unlock <strong>Voryn Asset Loan</strong> (up to KES 150,000 for delivery motorcycles, machinery, and tools) and <strong>Voryn Growth</strong> (up to KES 100,000 for major restocking).
+                    Unlock <strong>Voryn Asset Loan</strong> (up to KES 150,000 for productive equipment, machinery, tools, and delivery motorcycles) and <strong>Voryn Growth</strong> (up to KES 100,000 for major restocking).
                   </p>
                 </div>
               </div>
