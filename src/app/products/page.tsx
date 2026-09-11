@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check, Clock, Wallet, ArrowRight } from "lucide-react";
+import { Check, Clock, Wallet, ArrowRight, Sparkles, TrendingUp, Bike } from "lucide-react";
 import { products, formatKES } from "@/lib/products";
 import { accents } from "@/lib/accents";
 import PageHero from "@/components/PageHero";
-import ProductCard from "@/components/ProductCard";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import LoanCalculator from "@/components/LoanCalculator";
+import InteractiveProductsSection from "@/components/InteractiveProductsSection";
+import GraduationPathway from "@/components/GraduationPathway";
 
 export const metadata: Metadata = {
-  title: "Loan Products",
+  title: "Loan Products & Graduation Pathway",
   description:
-    "Explore Voryn Capital's five loan products - from Voryn Daily Trader quick cash to Voryn Growth SME financing up to KES 1,000,000.",
+    "Explore Voryn Capital's six loan products - from Voryn Biashara starter working capital to Voryn Chama, Agri-Boost, Growth, and Voryn Asset Loan for motorcycles and machinery.",
 };
 
 export default function ProductsPage() {
@@ -20,29 +21,38 @@ export default function ProductsPage() {
     <>
       <PageHero
         eyebrow="Loan Products"
-        title="Finance matched to the way you trade"
-        subtitle="Five focused products covering everyday working capital, ultra-short daily cash, women-led businesses, premium SME growth and seasonal agriculture."
+        title="Finance tailored to the real rhythm of your trade"
+        subtitle="Six focused facilities covering starter working capital, group chamas, women entrepreneurs, seasonal farming, and asset loans for delivery motorcycles and equipment."
         crumbs={[{ label: "Home", href: "/" }, { label: "Loan Products" }]}
       />
 
-      <section className="py-16 sm:py-20">
-        <div className="container-x grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {products.map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 3) * 0.06}>
-              <ProductCard product={p} />
-            </Reveal>
-          ))}
+      {/* Interactive Products Section */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="container-x">
+          <SectionHeading
+            center
+            eyebrow="Explore Products"
+            title="Interactive Loan Directory"
+            subtitle="Click on any loan below to test instant repayment figures, check qualifications, or explore how to graduate into it."
+          />
+
+          <div className="mt-12">
+            <InteractiveProductsSection products={products} showCompareLink={false} />
+          </div>
         </div>
       </section>
 
-      {/* Loan calculator */}
+      {/* Interactive Graduation Pathway */}
+      <GraduationPathway products={products} />
+
+      {/* Loan calculator standalone */}
       <section className="bg-cream py-16 sm:py-20">
         <div className="container-x">
           <SectionHeading
             center
             eyebrow="Loan Calculator"
-            title="See what repayment could look like"
-            subtitle="Pick a product, amount and period for an instant indicative estimate. Adjust and compare before you apply."
+            title="See what repayment looks like"
+            subtitle="Select any product, slide the amount and choose your preferred tenure to see indicative weekly or monthly installments."
           />
           <Reveal className="mt-12">
             <LoanCalculator products={products} />
@@ -51,49 +61,61 @@ export default function ProductsPage() {
       </section>
 
       {/* Comparison table */}
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="container-x">
           <SectionHeading
             center
             eyebrow="At a glance"
-            title="Compare the products"
-            subtitle="A quick side-by-side to help you find the right fit."
+            title="Compare all six products"
+            subtitle="A clear side-by-side comparison to help you find the right fit for your enterprise."
           />
 
           <Reveal className="mt-12 overflow-x-auto">
-            <table className="w-full min-w-[720px] border-collapse overflow-hidden rounded-2xl bg-white text-left text-sm shadow-sm">
+            <table className="w-full min-w-[760px] border-collapse overflow-hidden rounded-2xl bg-white text-left text-sm shadow-md border border-silver-200">
               <thead>
-                <tr className="bg-navy-800 text-white">
+                <tr className="bg-navy-900 text-white">
                   <th className="px-5 py-4 font-semibold">Product</th>
-                  <th className="px-5 py-4 font-semibold">Amount</th>
-                  <th className="px-5 py-4 font-semibold">Tenure</th>
-                  <th className="px-5 py-4 font-semibold">Best for</th>
-                  <th className="px-5 py-4" />
+                  <th className="px-5 py-4 font-semibold">Client Status</th>
+                  <th className="px-5 py-4 font-semibold">Amount Range</th>
+                  <th className="px-5 py-4 font-semibold">Repayment Period</th>
+                  <th className="px-5 py-4 font-semibold">Primary Target</th>
+                  <th className="px-5 py-4 font-semibold text-right">Action</th>
                 </tr>
               </thead>
               <tbody>
                 {products.map((p) => (
-                  <tr key={p.slug} className="border-b border-silver-200 last:border-0">
+                  <tr key={p.slug} className="border-b border-silver-200 last:border-0 hover:bg-silver-50/70 transition-colors">
                     <td className="px-5 py-4">
-                      <div className="flex items-center gap-2">
-                        <span className={`h-2.5 w-2.5 rounded-full ${accents[p.accent].bar}`} />
+                      <div className="flex items-center gap-2.5">
+                        <span className={`h-3 w-3 rounded-full ${accents[p.accent].bar}`} />
                         <div>
-                          <p className="font-semibold text-navy-800">{p.name}</p>
+                          <p className="font-bold text-navy-800">{p.name}</p>
                           <p className="text-xs text-silver-500">{p.short}</p>
                         </div>
                       </div>
                     </td>
-                    <td className="px-5 py-4 font-medium text-navy-800">
-                      {formatKES(p.min).replace("KES ", "KES ")} – {formatKES(p.max).replace("KES ", "")}
-                    </td>
-                    <td className="px-5 py-4 text-navy-800">{p.tenure}</td>
-                    <td className="px-5 py-4 text-silver-600">{p.bestFor[0]}</td>
                     <td className="px-5 py-4">
+                      {p.isStarterProduct ? (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-0.5 text-xs font-bold text-emerald-800">
+                          <Sparkles className="h-3 w-3" /> Starter (New Clients)
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-navy-100 px-2.5 py-0.5 text-xs font-bold text-navy-800">
+                          <TrendingUp className="h-3 w-3 text-gold-600" /> {p.graduationTier}
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-5 py-4 font-semibold text-navy-900">
+                      {formatKES(p.min)} – {formatKES(p.max)}
+                    </td>
+                    <td className="px-5 py-4 text-navy-800 font-medium">{p.tenure}</td>
+                    <td className="px-5 py-4 text-xs text-silver-600 max-w-xs">{p.bestFor[0]}</td>
+                    <td className="px-5 py-4 text-right">
                       <Link
                         href={`/products/${p.slug}`}
-                        className="inline-flex items-center gap-1 font-semibold text-navy-700 hover:text-gold-600"
+                        className="inline-flex items-center gap-1 font-bold text-navy-800 hover:text-gold-600 transition-colors text-xs"
                       >
-                        View <ArrowRight className="h-3.5 w-3.5" />
+                        View Details <ArrowRight className="h-3.5 w-3.5" />
                       </Link>
                     </td>
                   </tr>
@@ -104,17 +126,32 @@ export default function ProductsPage() {
 
           <Reveal className="mt-10 grid gap-4 sm:grid-cols-3">
             {[
-              { icon: Wallet, t: "Unsecured", d: "No collateral for qualifying clients." },
-              { icon: Clock, t: "Short cycles", d: "Weekly, bi-weekly & monthly terms." },
-              { icon: Check, t: "Advisory included", d: "Coaching bundled with every loan." },
+              {
+                icon: Wallet,
+                t: "Starter Biashara",
+                d: "Open directly to all new business owners with active daily trade.",
+              },
+              {
+                icon: TrendingUp,
+                t: "Progressive Graduation",
+                d: "On-time repayments build your trust record and unlock specialized facilities.",
+              },
+              {
+                icon: Bike,
+                t: "Productive Assets",
+                d: "Finance delivery motorcycles and tools without putting up land title deeds.",
+              },
             ].map((f) => (
-              <div key={f.t} className="flex items-start gap-3 rounded-xl border border-silver-200 bg-white p-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy-50 text-navy-700">
+              <div
+                key={f.t}
+                className="flex items-start gap-3 rounded-2xl border border-silver-200 bg-white p-5 shadow-sm"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy-50 text-navy-700">
                   <f.icon className="h-5 w-5" />
                 </div>
                 <div>
-                  <p className="font-semibold text-navy-800">{f.t}</p>
-                  <p className="text-sm text-silver-600">{f.d}</p>
+                  <p className="font-bold text-navy-800">{f.t}</p>
+                  <p className="text-xs sm:text-sm text-silver-600 mt-0.5 leading-relaxed">{f.d}</p>
                 </div>
               </div>
             ))}

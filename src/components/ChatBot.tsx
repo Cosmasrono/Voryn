@@ -20,9 +20,9 @@ type Message = {
 
 const SUGGESTED = [
   "What loans do you offer?",
-  "How do I apply?",
-  "What's the Mama Biashara loan?",
-  "How fast is disbursement?",
+  "How does graduation work for new clients?",
+  "Tell me about the Motorcycle Asset Loan",
+  "How does Voryn Chama work?",
 ];
 
 export default function ChatBot() {
@@ -32,7 +32,7 @@ export default function ChatBot() {
     {
       role: "assistant",
       content:
-        "Habari! 👋 I'm **Vori**, your Voryn Capital assistant. I can help you find the right loan, explain eligibility, or guide you through applying. How can I help?",
+        "Habari! 👋 I'm **Vori**, your Voryn Capital assistant. I can help you find the right loan (including our starter Biashara loan, group Chamas, and motorcycle asset loans), explain how new clients graduate with trust, or guide you through applying. How can I help?",
     },
   ]);
   const [input, setInput] = useState("");
