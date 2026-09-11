@@ -75,10 +75,10 @@ export default function Navbar() {
       />
 
       <div className="container-x flex min-h-[5.25rem] lg:min-h-[5.75rem] items-center justify-between py-3.5 lg:py-4">
-        <Logo size="lg" />
+        <Logo size="lg" className="shrink-0" />
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 xl:gap-2 lg:flex">
+        <nav className="hidden items-center gap-0.5 xl:gap-1 lg:flex">
           {primaryNav.map((item) => {
             const active =
               item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
@@ -86,7 +86,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative rounded-full px-4 py-2.5 text-[15px] xl:text-[16px] font-semibold transition-all duration-200 ${
+                className={`relative whitespace-nowrap rounded-full px-3 xl:px-3.5 py-2.5 text-[14px] xl:text-[15px] font-semibold transition-all duration-200 ${
                   active
                     ? "text-navy-900 bg-navy-50/90 font-bold"
                     : "text-silver-600 hover:text-navy-900 hover:bg-silver-100/80"
@@ -104,7 +104,7 @@ export default function Navbar() {
           <div ref={moreRef} className="relative">
             <button
               onClick={() => setMoreOpen((v) => !v)}
-              className={`flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[15px] xl:text-[16px] font-semibold transition-all duration-200 ${
+              className={`flex items-center gap-1 whitespace-nowrap rounded-full px-3 xl:px-3.5 py-2.5 text-[14px] xl:text-[15px] font-semibold transition-all duration-200 ${
                 moreActive
                   ? "text-navy-900 bg-navy-50/90 font-bold"
                   : "text-silver-600 hover:text-navy-900 hover:bg-silver-100/80"
@@ -147,19 +147,21 @@ export default function Navbar() {
           </div>
         </nav>
 
-        <div className="hidden items-center gap-4 xl:gap-5 lg:flex">
+        <div className="hidden shrink-0 items-center gap-3 xl:gap-4 lg:flex">
           <a
             href={`tel:${site.phoneHref}`}
-            className="group flex items-center gap-2.5 text-[15px] font-semibold text-navy-800 transition-colors hover:text-gold-600"
+            aria-label={`Call ${site.phone}`}
+            title={site.phone}
+            className="group flex items-center gap-2.5 whitespace-nowrap text-[14px] font-semibold text-navy-800 transition-colors hover:text-gold-600"
           >
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-500/10 ring-1 ring-gold-500/30 group-hover:bg-gold-500/20 group-hover:scale-105 transition-all">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold-500/10 ring-1 ring-gold-500/30 group-hover:bg-gold-500/20 group-hover:scale-105 transition-all">
               <Phone className="h-4 w-4 text-gold-600" />
             </span>
-            <span>{site.phone}</span>
+            <span className="hidden xl:inline">{site.phone}</span>
           </a>
           <Link
             href="/contact"
-            className="btn-gold rounded-full bg-navy-700 hover:bg-navy-800 px-6 py-2.5 xl:py-3 text-[15px] font-bold text-white shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
+            className="btn-gold whitespace-nowrap rounded-full bg-navy-700 hover:bg-navy-800 px-5 xl:px-6 py-2.5 text-[15px] font-bold text-white shadow-md hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
           >
             Apply Now
           </Link>
