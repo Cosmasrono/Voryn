@@ -51,7 +51,7 @@ export const products: Product[] = [
     summary:
       "Our core unsecured working-capital loan for retail shops, market stalls, salons, and growing traders. Restock shelves, settle supplier invoices, and smooth out daily cash flow - with a credit line that grows every time you repay on schedule.",
     min: 10000,
-    max: 250000,
+    max: 20000,
     tenure: "1 – 6 months",
     tenureShort: "1–6 mo",
     disbursement: "Instant M-Pesa disbursement",
@@ -71,7 +71,7 @@ export const products: Product[] = [
     features: [
       "Starter loan: open to every verified new business client",
       "100% Unsecured - no title deeds or logbooks required",
-      "Stepped limit growth: KES 10,000 → 25,000 → 50,000 → 100,000+",
+      "Stepped limit growth: KES 10,000 → 15,000 → 20,000",
       "Direct pathway to unlock Chama, Agri-Boost, Growth, and Asset loans",
     ],
   },

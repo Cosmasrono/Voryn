@@ -40,7 +40,7 @@ const levels: PathwayLevel[] = [
     unlockCriteria: "Immediate application for all registered or operating micro-businesses.",
     loanSlugs: ["voryn-biashara"],
     perks: [
-      "100% unsecured working capital from KES 10,000 to KES 250,000",
+      "100% unsecured working capital from KES 10,000 to KES 20,000",
       "Instant M-Pesa disbursement to keep business moving",
       "Free cash-flow & record-keeping coaching from your relationship officer",
       "Every on-time repayment boosts your internal Voryn Trust Score",

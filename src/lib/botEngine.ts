@@ -30,9 +30,9 @@ function predictLoanForAmount(amount: number): string {
   const matching = products.filter((p) => amount >= p.min && amount <= p.max);
   if (matching.length === 0) {
     if (amount < 5000) {
-      return `Our smallest seasonal loan starts at **KES 5,000** for **Voryn Agri-Boost** or **Voryn Mama Biashara**.\n\nFor new business clients, our direct entry product is **Voryn Biashara** (KES 10,000 – 250,000). Repaying on time builds your trust score and unlocks all other products!\n\nWould you like to start an application for KES 10,000 with an officer on **${site.phone}**?`;
+      return `Our smallest seasonal loan starts at **KES 5,000** for **Voryn Agri-Boost** or **Voryn Mama Biashara**.\n\nFor new business clients, our direct entry product is **Voryn Biashara** (KES 10,000 – 20,000). Repaying on time builds your trust score and unlocks all other products!\n\nWould you like to start an application for KES 10,000 with an officer on **${site.phone}**?`;
     }
-    return `For amounts up to **KES 150,000**, our **Voryn Asset Loan** finances delivery motorcycles and productive machinery, and **Voryn Biashara** scales up to **KES 250,000** for repeat borrowers.\n\nCall our credit team directly on **${site.phone}** or message us on WhatsApp to discuss your facility!`;
+    return `For amounts up to **KES 150,000**, our **Voryn Asset Loan** finances delivery motorcycles and productive machinery, and **Voryn Biashara** scales up to **KES 20,000** for repeat borrowers.\n\nCall our credit team directly on **${site.phone}** or message us on WhatsApp to discuss your facility!`;
   }
 
   let text = `For **${formatKES(amount)}**, here are the matching facilities:\n\n`;
@@ -68,7 +68,7 @@ export function generateLocalBotReply(messages: { role: string; content: string 
   ) {
     return `🌱 **New Client & Graduation Pathway:**\n\n` +
       `At Voryn Capital, we build trust step-by-step with zero land title deed requirements:\n\n` +
-      `1. **Start with Voryn Biashara:** All new business clients begin with **Voryn Biashara** (KES 10,000 – 250,000) for working capital.\n` +
+      `1. **Start with Voryn Biashara:** All new business clients begin with **Voryn Biashara** (KES 10,000 – 20,000) for working capital.\n` +
       `2. **Build Your Track Record:** Repay your installments on time via M-Pesa.\n` +
       `3. **Graduate to Specialized Loans:** After establishing trust, you unlock:\n` +
       `   • 👥 **Voryn Chama** (KES 10k–30k for groups)\n` +
@@ -146,7 +146,7 @@ export function generateLocalBotReply(messages: { role: string; content: string 
     query.includes("bidhaa")
   ) {
     return `We offer **6 tailored loan facilities** with instant M-Pesa disbursement:\n\n` +
-      `1. 🏪 **Voryn Biashara** (KES 10,000 – 250,000 | 1–6 months)\n` +
+      `1. 🏪 **Voryn Biashara** (KES 10,000 – 20,000 | 1–6 months)\n` +
       `   *The required starter loan for all new business clients.* Working capital for retail, shops & services.\n\n` +
       `2. 👥 **Voryn Chama** (KES 10,000 – 30,000 | 1–3 months)\n` +
       `   Group financing for table-banking and joint trade ventures.\n\n` +

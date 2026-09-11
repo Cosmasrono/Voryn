@@ -470,7 +470,7 @@ export default function ProductModal({
                     </span>
                   </div>
                   <p className="mt-2 text-xs sm:text-sm text-silver-600">
-                    All new clients start with <strong>Voryn Biashara</strong> (KES 10,000 – 250,000). You get instant M-Pesa working capital to prove your trading rhythm.
+                    All new clients start with <strong>Voryn Biashara</strong> (KES 10,000 – 20,000). You get instant M-Pesa working capital to prove your trading rhythm.
                   </p>
                 </div>
 
